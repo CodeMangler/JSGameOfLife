@@ -1,0 +1,27 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Game of Life</title>
+    </head>
+    <body>
+        <h1>Game of Life</h1>
+		<canvas id="board">
+		    Your browser does not appear to support Canvas.	
+		</canvas>
+        <input type="button" id="start" value="Start" />
+        <input type="button" id="stop" value="Stop"/>
+        <script type="text/javascript" src="utils.js"></script>
+        <script type="text/javascript" src="game-cell.js"></script>
+        <script type="text/javascript" src="game-rule.js"></script>
+        <script type="text/javascript" src="game-board.js"></script>
+        <script type="text/javascript" src="game-of-life.js"></script>
+        <script type="text/javascript">
+            var gameOfLife = new GameOfLife(document.getElementById("board"), 50, 50);
+            gameOfLife.initialize();
+            document.getElementById("start").onclick = gameOfLife.start;
+            document.getElementById("stop").onclick = gameOfLife.stop;
+        </script>
+    </body>
+</html>
